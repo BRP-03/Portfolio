@@ -1,0 +1,455 @@
+/* Basic Resets and Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+    background-color: #f4f4f4; /* Light background for the whole page */
+    color: #333; /* Default text color */
+}
+
+/* Header Styling */
+.main-header {
+    background-color: #2c3e50; /* Dark blue background for header */
+    color: #fff; /* White text for header */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    margin-bottom: 20px; /* Space below navigation bar */
+}
+
+.nav-links {
+    list-style: none; /* Remove bullet points from list - YE BAHUT IMPORTANT HAI */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Make links appear in a row */
+    justify-content: center; /* Center the links horizontally */
+    gap: 30px; /* Space between links */
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.nav-links li a:hover {
+    color: #ecf0f1; /* Lighter color on hover */
+    /* text-decoration: underline; */ /* Optional: underline on hover */
+}
+
+/* Hero Section (Photo + Name) Styling */
+.hero-section {
+    display: flex;
+    flex-direction: column; /* Stack photo and text vertically on smaller screens */
+    align-items: center; /* Center items horizontally */
+    padding: 20px;
+}
+
+.profile-photo-container {
+    width: 200px; /* Size of the photo container */
+    height: 200px;
+    border-radius: 50%; /* Makes the photo circular - YE BHI IMPORTANT HAI */
+    overflow: hidden; /* Hides parts of the image outside the circle */
+    border: 5px solid #3498db; /* Blue border around the photo */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow for photo */
+    margin-bottom: 15px; /* Space below the photo */
+}
+
+.profile-photo {
+    width: 100%; /* Make image fill its container */
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    display: block; /* Removes extra space below image */
+}
+
+.bio-text h1 {
+    margin: 0;
+    font-size: 2.8em; /* Larger font size for name */
+    color: #ecf0f1; /* Lighter color for name */
+}
+
+.bio-text .logo-text {
+    margin: 5px 0 0;
+    font-size: 1.5em; /* Font size for B_R_P */
+    color: #bdc3c7; /* Slightly greyed out for logo text */
+    font-weight: normal;
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 768px) {
+    .hero-section {
+        flex-direction: row; /* Photo and text side-by-side on larger screens */
+        justify-content: center; /* Center the content */
+        gap: 40px; /* Space between photo and text */
+        padding: 40px 20px;
+    }
+
+    .profile-photo-container {
+        width: 180px; /* Slightly larger photo on bigger screens */
+        height: 180px;
+    }
+
+    .bio-text {
+        text-align: left; /* Align text to the left when beside photo */
+    }
+
+    .bio-text h1 {
+        font-size: 3.5em;
+    }
+
+    .bio-text .logo-text {
+        font-size: 1.8em;
+    }
+}
+
+
+/* --- General Section Styling (Applies to About, Skills, Projects, Contact) --- */
+.container {
+    max-width: 960px; /* Content width limit */
+    margin: 0 auto;   /* Center the container */
+    padding: 20px;
+}
+
+section {
+    padding: 80px 0; /* Top and bottom padding for sections */
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5em;
+    color: #2c3e50; /* Dark blue heading */
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+section h2::after { /* Underline effect for headings */
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #3498db; /* Blue underline */
+    border-radius: 2px;
+}
+
+
+/* --- About Me Section Specifics --- */
+.about-section {
+    background-color: #ffffff; /* White background */
+    line-height: 1.8; /* Better readability */
+    color: #555;
+}
+
+.about-section p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* Text align left for better readability */
+}
+
+/* --- Skills Section Specifics --- */
+.skills-section {
+    background-color: #ecf0f1; /* Light grey background */
+    padding-bottom: 60px; /* Slightly less padding at bottom */
+}
+
+.skill-sub-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to next line */
+    justify-content: center; /* Center items */
+    gap: 20px; /* Space between skill items */
+    margin-top: 30px;
+}
+
+.skill-sub-list p {
+    background-color: #3498db; /* Blue background for skill tags */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px; /* Rounded corners for skill tags */
+    font-weight: bold;
+    font-size: 1em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.skill-sub-list p:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+
+/* --- Projects Section Specifics --- */
+.projects-section {
+    background-color: #ffffff; /* White background */
+}
+
+.project-grid {
+    display: grid; /* Grid layout for projects */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between project items */
+    margin-top: 40px;
+}
+
+.project-item {
+    background-color: #f9f9f9; /* Light background for each project */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: left; /* Align text left within project item */
+}
+
+.project-item:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.project-item h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.project-item p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.project-item a {
+    display: inline-block; /* Allows padding and margin */
+    background-color: #3498db; /* Blue button */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.project-item a:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+
+/* --- Contact Section Specifics --- */
+.contact-section {
+    background-color: #ecf0f1; /* Light grey background */
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.contact-section a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-section a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+/* --- Contact Section Enhancements --- */
+.contact-section {
+    background-color: #f8f8f8;
+    padding: 80px 0;
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #555;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+.contact-section .personal-note {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-size: 1em;
+}
+
+.contact-links-text {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex; /* Links ko vertically center karne ke liye */
+    flex-direction: column; /* Links ko ek ke neeche ek rakhne ke liye */
+    align-items: center; /* Horizontally center links */
+}
+
+.contact-links-text p { /* Paragraphs jo links ko wrap kar rahe hain */
+    font-size: 1.2em;
+    margin-bottom: 15px; /* Links ke beech space */
+    color: #333; /* Default text color */
+    text-align: center; /* Ensure text is centered if it breaks to new line */
+}
+
+.text-link-with-icon { /* Links jismein icon aur text dono hain */
+    color: #3498db; /* Blue color for links */
+    text-decoration: none; /* Default underline remove karein */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+    display: flex; /* Icon aur text ko side-by-side rakhne ke liye */
+    align-items: center; /* Vertically center icon aur text */
+    justify-content: center; /* Content ko center karne ke liye */
+}
+
+.text-link-with-icon i { /* Icon ki styling */
+    margin-right: 10px; /* Icon aur text ke beech space */
+    font-size: 1.3em; /* Icon size */
+    color: #3498db; /* Icons ko blue color dein */
+    /* Ensure icons are visible even if Font Awesome doesn't load immediately */
+    min-width: 20px; /* Minimum width for icon space */
+    text-align: center;
+}
+
+.text-link-with-icon:hover {
+    color: #2980b9; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.text-link-with-icon:hover i { /* Icon ka color bhi change ho hover par */
+    color: #2980b9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .contact-links-text p {
+        font-size: 1.1em;
+        padding: 0 15px;
+    }
+}
+/* --- Footer Styling --- */
+.main-footer {
+    background-color: #2c3e50; /* Dark blue footer */
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 1px solid #34495e;
+}
+
+.main-footer p {
+    margin: 0;
+}
+/* --- Projects Section Enhancements --- */
+
+.project-item {
+    background-color: #fcfcfc; /* Slightly lighter background for cards */
+    border: 1px solid #e0e0e0; /* Softer border */
+    border-radius: 12px; /* More rounded corners */
+    padding: 30px; /* More padding */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* A bit stronger shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: left;
+    display: flex; /* Flexbox for internal alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Distribute space */
+}
+
+.project-item:hover {
+    transform: translateY(-10px); /* More pronounced lift on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+.project-item h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8em; /* Slightly larger title */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between title and emoji */
+}
+
+.project-item p {
+    color: #555; /* Darker text for main description */
+    line-height: 1.7; /* Better line spacing */
+    margin-bottom: 15px;
+    font-size: 1.05em; /* Slightly larger font */
+}
+
+.project-tagline {
+    font-style: italic;
+    color: #7f8c8d; /* Lighter color for tagline */
+    margin-top: -10px; /* Move closer to heading */
+    margin-bottom: 25px; /* Space below tagline */
+    font-size: 1em;
+}
+
+.features-heading {
+    font-weight: bold;
+    color: #34495e; /* Darker color for feature heading */
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.project-features {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0 0 25px 0; /* Adjust margin for list */
+}
+
+.project-features li {
+    background-color: #e8f3fa; /* Light blue background for each feature */
+    color: #2c3e50; /* Darker text */
+    padding: 10px 15px;
+    margin-bottom: 8px; /* Space between features */
+    border-radius: 8px;
+    font-size: 0.95em;
+    text-align: left; /* Align feature text left */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: flex-start; /* Align icon/emoji with text top */
+    gap: 8px;
+}
+
+.project-features li strong {
+    color: #3498db; /* Blue color for emphasized text within features */
+}
+
+.project-btn { /* Style for the action button */
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 25px; /* More padding for button */
+    text-decoration: none;
+    border-radius: 8px; /* More rounded button */
+    font-weight: bold;
+    font-size: 1.1em; /* Larger font for button */
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    margin-top: auto; /* Pushes button to the bottom of the flex container */
+    align-self: center; /* Center the button if using flex column */
+}
+
+.project-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px); /* Lift button on hover */
+}
+/* Add some padding to body to prevent content from hiding behind fixed header if you make it fixed later */
+/* body { padding-top: 100px; } /* Example, adjust as needed */
